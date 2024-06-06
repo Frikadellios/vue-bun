@@ -4,7 +4,8 @@
     "unifiedjs.vscode-mdx",
     "oven.bun-vscode",
     "biomejs.biome",
-    "bradlc.vscode-tailwindcss"
+    "bradlc.vscode-tailwindcss",
+    "vue.volar"
   ],
   "unwantedRecommendations": []
 }

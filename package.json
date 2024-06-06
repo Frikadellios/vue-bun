@@ -4,8 +4,8 @@
   "version": "1.0.1",
   "scripts": {
     "dev": "bunx --bun astro dev --verbose",
-    "start": "bun astro check && bunx --bun astro dev --verbose",
-    "build": "bun astro check && bunx --bun astro build --verbose",
+    "start": "bun astro check --verbose && bunx --bun astro dev --verbose",
+    "build": "bun astro check --verbose && bunx --bun astro build --verbose",
     "preview": "bunx --bun astro preview",
     "biomes": "bunx @biomejs/biome check --apply ./*",
     "astro": "astro"
@@ -27,9 +27,10 @@
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-vue": "^5.0.5",
     "@vueuse/core": "^10.10.0",
-    "astro": "4.9.2",
+    "astro": "4.9.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "date-fns": "^3.6.0",
     "embla-carousel": "^8.1.3",
     "embla-carousel-vue": "^8.1.3",
     "lucide-vue-next": "^0.378.0",
@@ -69,5 +70,5 @@
     "url": "https://github.com/Frikadellios/vue-bun/issues"
   },
   "homepage": "https://github.com/Frikadellios/vue-bun#readme",
-  "trustedDependencies": ["@biomejs/biome"]
+  "trustedDependencies": ["@biomejs/biome", "esbuild", "sharp", "vue-demi"]
 }
