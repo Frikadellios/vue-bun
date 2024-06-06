@@ -7,10 +7,11 @@ import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'astro/config'
 import million from 'million/compiler'
 import AutoImport from 'unplugin-auto-import/astro'
+import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://dp-ltd.org',
+  site: 'https://example.com',
   prefetch: {
     prefetchAll: true,
   },
@@ -24,6 +25,7 @@ export default defineConfig({
           skip: ['useBadHook', /badVariable/g],
         },
       }),
+      vueDevTools(),
       tailwindcss(),
     ],
   },

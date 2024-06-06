@@ -1,23 +1,36 @@
 ---
-import '@/styles/globals.css'
-interface Props {
+
+import BaseHead from '@/components/BaseHead.astro'
+import TailwindIndicator from '@/components/tailwind-indicator.astro'
+import { cn } from '@/utils/cn'
+
+type Props = {
   title: string
+  description?: string
+  lang: string
+  mainClass?: string
+  bodyClass?: string
 }
 
-const { title } = Astro.props
+import { SITE_TITLE } from '@/consts'
+import { getLangFromUrl } from '@/i18n/utils'
+const lang = getLangFromUrl(Astro.url)
+const { title, description, mainClass, bodyClass } = Astro.props as Props
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body class="bg-background text-foreground">
-		<slot />
-	</body>
+<html lang={lang} class="scroll-smooth bg-background text-foreground">
+  <head>
+    <BaseHead title={`${title} | ${SITE_TITLE}`} description={description ?? ''} />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <script is:inline src="./assets/vendor/preline/preline.js"></script>
+  </head>
+  <body class={cn("flex flex-col min-h-screen", bodyClass)}>
+        <main class={cn(mainClass)}>
+            <slot />
+            <TailwindIndicator />
+        </main>
+  </body>
 </html>
+
+<script src="../../node_modules/preline/preline.js"></script>

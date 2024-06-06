@@ -2,9 +2,12 @@
 import Dashbord from '@/components/dashbord.vue'
 import Navigation from '@/components/navigation.vue'
 import Layout from '@/layouts/Layout.astro'
+
+import { getLangFromUrl } from '@/i18n/utils'
+const lang = getLangFromUrl(Astro.url)
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Welcome to Astro." description="my admin page" lang={lang}>
 	<Navigation client:load />
 	<Dashbord client:load />
 </Layout>
