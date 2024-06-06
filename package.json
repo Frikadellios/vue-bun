@@ -48,7 +48,6 @@
     "vue-tsc": "^2.0.19",
     "zod": "^3.23.8"
   },
-  "module": "index.ts",
   "devDependencies": {
     "@biomejs/biome": "1.7.3",
     "@types/bun": "latest"
@@ -56,8 +55,16 @@
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
-  "main": "index.js",
-  "repository": "https://github.com/MagickSpace/vu-astrobun-clan",
-  "author": "MagickSpace <146006257+MagickSpace@users.noreply.github.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Frikadellios/vue-bun.git"
+  },
+  "author": "Hrihorii Ilin <devopsick@pm.me>",
+  "description": "To install dependencies:",
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Frikadellios/vue-bun/issues"
+  },
+  "homepage": "https://github.com/Frikadellios/vue-bun#readme"
 }
